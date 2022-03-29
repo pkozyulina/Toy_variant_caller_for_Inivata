@@ -9,9 +9,10 @@ If you are using default annotation:
 Then you can proceed right away to running 
 > ./ToySNVcaller.py -i [INPUT1 INPUT2 INPUT3 ...] -r [REFERENCE] -b [BED] -bp [OPTIONAL to generate bar plot]
 
-If you want to create a different annotation, please run ./parse_annotation.py -i [INPUT gene1.bed genen2.bed gene3.bed ...] prior to ToySNVcaller.py. 
+If you want to create a different annotation, please run 
+>./parse_annotation.py -i [INPUT gene1.bed genen2.bed gene3.bed ...] 
 
-And after that run ./ToySNVcaller.py with -a flag.
+prior to ToySNVcaller.py. And after that run ./ToySNVcaller.py with -a flag.
 
 
 ## What does it do:
