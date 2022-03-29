@@ -1,7 +1,7 @@
-# Toy Variant Caller for Inivata
+# Toy SNV Caller for Inivata
 A coding task for Inivata from 20220228
 
-What does it do:
+## What does it do:
 
 1. Prepares reference
     * reads *.fa.gz and *.bed files
@@ -17,9 +17,9 @@ What does it do:
     * vusualizes SNV frequency as bar plot
 
 4. Generates output table containing:
-        ◦ gene name
-        ◦ nature of the mutation (e.g. C->T etc)
-        ◦ frequency of the mutation
-        ◦ number of amplicons supporting the mutation
-        ◦ reference sequence for the amplicon
-        ◦ mutated sequence for the amplicon
+   * gene name
+   * nature of the mutation (e.g. C->T etc)
+   * frequency of the mutation
+   * number of amplicons supporting the mutation
+   * reference sequence for the amplicon
+   * mutated sequence for the amplicon
