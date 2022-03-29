@@ -35,6 +35,8 @@ parser.add_argument('-o', '--output', help='Output filename for the table with '
                     metavar='output.tsv', type=argparse.FileType('w'), default='output.tsv')
 parser.add_argument('-bp', '--barplot', help='use if you want to get a bar plot with mutations data',
                     action='store_true')
+parser.add_argument('-a', '--annotation', help='use if you want to get a bar plot with mutations data',
+                    action='store_true')
 args = parser.parse_args()
 
 
@@ -127,7 +129,8 @@ def plot_freqs(number_mut, number_total, legend):
 def main():
 
     # prepare reference data
-    # annotation = read_annotation() - this function was supposed to read annotation prepared by parse_annotation.py
+    if args.annotation:
+        annotation = read_annotation() #this function was supposed to read annotation prepared by parse_annotation.py
     bed = parse_bed(args.bed)
     amplicons = parse_ref(args.reference, bed)
 

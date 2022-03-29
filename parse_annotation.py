@@ -23,7 +23,7 @@ def reformat_bed(bed):
 def main():
     # parsing command line arguments
     parser = argparse.ArgumentParser(description='Run parse_annotation.py to generate annotation for coding test.')
-    parser.add_argument('-i', '--input', help='Input bed files? containing gene coordinates', metavar='gene.bed', nargs='+',
+    parser.add_argument('-i', '--input', help='Input bed files containing gene coordinates', metavar='gene.bed', nargs='+',
                         required=True)
     args = parser.parse_args()
 
