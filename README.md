@@ -3,7 +3,7 @@ A coding task from 20220228.
 There were some options on how to approach this task. I could use some more of biopython (classes etc) and make it shorter, however the task appeared to be interesting to me so I decided to do most of the coding from scratch. 
 
 ## How to run:
-If you are using default annotation:
+If you are using default annotation, such as:
    * gene1: (55019278, 55205617)
    * gene2: (140734770, 140924566)
 
@@ -13,7 +13,7 @@ Then you can proceed right away to running
 If you want to create a different annotation, please run 
 >./parse_annotation.py -i [INPUT gene1.bed genen2.bed gene3.bed ...] 
 
-prior to ToySNVcaller.py. And after that run ./ToySNVcaller.py with -a flag.
+where gene1.bed - a file with bed coordinates for gene1. This script should be run prior to ToySNVcaller.py. And after that you can run ./ToySNVcaller.py with -a flag and a new annotation will be provided.
 
 
 ## What does it do:
