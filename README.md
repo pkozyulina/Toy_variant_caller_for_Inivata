@@ -2,6 +2,10 @@
 A coding task from 20220228.
 There were some options on how to approach this task. I could use some more of biopython (classes etc) and make it shorter, however the task appeared to be interesting to me so I decided to do most of the coding from scratch. 
 
+# Test data
+All the test data is in data/ folder except for genome.fa.gz. The last one can be found here:
+https://drive.google.com/file/d/1x51jnzemJ1siynhbyzIgWip-YTc3ZsbX/view?usp=sharing
+
 ## How to run:
 If you are using default annotation, such as:
    * gene1: (55019278, 55205617)
