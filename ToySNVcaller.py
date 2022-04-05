@@ -20,7 +20,7 @@ log = logging.getLogger("toy-logger")
 
 
 # parsing command line arguments
-parser = argparse.ArgumentParser(description='Toy aligner and variant caller for the code task from Inivata. '
+parser = argparse.ArgumentParser(description='Toy aligner and variant caller for the code task. '
                                              'In order to get gene names you need to prepare annotation first. '
                                              'For that - run parse_annotation.py and provide it with bed files.'
                                              'Dependencies: biopython')
@@ -129,8 +129,8 @@ def plot_freqs(number_mut, number_total, legend):
 def main():
 
     # prepare reference data
-    if args.annotation:
-        annotation = read_annotation() #this function was supposed to read annotation prepared by parse_annotation.py
+    #if args.annotation:
+    #    annotation = read_annotation() #this function was supposed to read annotation prepared by parse_annotation.py
     bed = parse_bed(args.bed)
     amplicons = parse_ref(args.reference, bed)
 
