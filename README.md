@@ -1,5 +1,5 @@
-# Toy SNV Caller for Inivata
-A coding task for Inivata from 20220228.
+# Toy SNV Caller as a coding test
+A coding task from 20220228.
 There were some options on how to approach this task. I could use some more of biopython (classes etc) and make it shorter, however the task appeared to be interesting to me so I decided to do most of the coding from scratch. 
 
 ## How to run:
