@@ -41,15 +41,19 @@ class Read:
 
     def mismatch_number(self):
         return len(self.seq)*2 - self.score
-
-    # find mismatch coordinate
+    
     def find_variants(self):
+        """
+        Find mismatch coordinate
+        """
         for n in range(len(self.seq)):
             if self.seq[n] != self.ref[n]:
                 self.variants.append(n)
 
-    # find mismatches
     def mismatch(self, n):
+        """
+        Find mismatches
+        """
         return self.ref[n], self.seq[n]
 
     def mismatches(self):
