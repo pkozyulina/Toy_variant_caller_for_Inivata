@@ -17,8 +17,11 @@ class Read:
         self.align_coordinates = (0, 0)
         self.read_coord = (0, 0)
 
-    # get the alignment score in order to deduce if the ref and the read are identical
+    
     def align_score(self, ref):
+        """
+        Get the alignment score in order to deduce if the ref and the read are identical
+        """
         for ref_name, reference in ref.items():
 
             for a in pairwise2.align.localms(reference[0], self.seq, 2, -1, -1, -0.5):
