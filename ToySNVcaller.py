@@ -45,8 +45,10 @@ args = parser.parse_args()
 annotation = {'gene1': [('55019278', '55205617')], 'gene2': [('140734770', '140924566')]}
 
 
-# need to be uncommented in main function in order to read annotation from pkl-file
 def read_annotation(annot_filename='data/annotation.pkl'):
+    """
+    Need to be uncommented in main function in order to read annotation from pkl-file
+    """
     try:
         with open(annot_filename, 'rb') as f:
             return pickle.load(f)
@@ -55,16 +57,20 @@ def read_annotation(annot_filename='data/annotation.pkl'):
               'Please, generate it with parse_annotation.py!\n', e)
 
 
-# read fasta and return as generator: fasta sequence and fasta ID
-def parse_reads(input_file):
+de f parse_reads(input_file):
+    """
+    Read fasta and return as generator: fasta sequence and fasta ID
+    """
     for ref_file in input_file:
         with gzip.open(ref_file, "rt") as handle:
             for record in SeqIO.parse(handle, "fasta"):
                 yield str(record.seq), record.id
 
 
-# use bed file in order to trim reference according to amplicon coordinates
 def parse_ref(input_ref, input_bed):
+    """
+    Use bed file in order to trim reference according to amplicon coordinates
+    """
     amplicons = defaultdict(tuple)
     with gzip.open(input_ref, "rt") as handle:
         for record in SeqIO.parse(handle, "fasta"):
@@ -76,8 +82,10 @@ def parse_ref(input_ref, input_bed):
     return amplicons
 
 
-# count total read numer per amplicon coordinates
 def count_total_read_number(coordinate, read_coordinates):
+    """
+    Count total read numer per amplicon coordinates
+    """
     total_reads = 0
     for coord, number in read_coordinates.items():
         if coordinate in range(coord[0], coord[1]):
@@ -85,8 +93,10 @@ def count_total_read_number(coordinate, read_coordinates):
     return total_reads
 
 
-# if read contains mutations then this function returns alternative variants as a dict containing class Variant objects
 def return_variants(mismatches, variants):
+    """
+    If read contains mutations then this function returns alternative variants as a dict containing class Variant objects
+    """
     for mismatch in mismatches:
         if mismatch[1] in variants:
             variants[mismatch[1]].add_variant(mismatch[0][1])
@@ -95,8 +105,10 @@ def return_variants(mismatches, variants):
     return variants
 
 
-# returns reference amplicon and mutated amplicon sequences
 def mutate_amplicon(amplicons, coordinate, mutation):
+    """
+    Returns reference amplicon and mutated amplicon sequences
+    """
     for amplicon, seq in amplicons.items():
         if coordinate in range(int(seq[1][0]), int(seq[1][1])):
             index = coordinate - int(seq[1][0])
@@ -104,17 +116,20 @@ def mutate_amplicon(amplicons, coordinate, mutation):
             return str(seq[0]), mutant_seq
 
 
-# get gene name from the annotation
 def get_gene_name(annotation, coordinate):
+    """
+    Get gene name from the annotation
+    """
     for gene, coord in annotation.items():
         for c in coord:
             if coordinate in range(int(c[0]), int(c[1])):
                 return gene
 
 
-# bar plot for mutations detected
 def plot_freqs(number_mut, number_total, legend):
-    # creating the bar plot
+    """
+    Bar plot for mutations detected
+    """
     ind = np.arange(len(number_mut))
     p1 = plt.bar(ind, number_total)
     p2 = plt.bar(ind, number_mut, bottom=number_total)
