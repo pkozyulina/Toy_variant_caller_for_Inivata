@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+"""
+Class deals with variant data segregated by coordinates
+"""
+
 from collections import defaultdict
 
 
