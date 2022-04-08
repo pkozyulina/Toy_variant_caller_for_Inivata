@@ -57,7 +57,7 @@ def read_annotation(annot_filename='data/annotation.pkl'):
               'Please, generate it with parse_annotation.py!\n', e)
 
 
-de f parse_reads(input_file):
+def parse_reads(input_file):
     """
     Read fasta and return as generator: fasta sequence and fasta ID
     """
